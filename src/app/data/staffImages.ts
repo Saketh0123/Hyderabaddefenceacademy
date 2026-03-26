@@ -1,9 +1,11 @@
+import { assetUrl } from "./assetUrl";
+
 export type StaffImage = {
   id: string;
   image: string;
 };
 
-export const staffImages: StaffImage[] = [
+const staffImagePaths: StaffImage[] = [
   // Add staff image entries from public/staff-images/.
   // Example:
   // { id: "staff-1", image: "/staff-images/staff-1.jpg" },
@@ -19,3 +21,8 @@ export const staffImages: StaffImage[] = [
   { id: "9", image: "/staff-images/9.png" },
   { id: "10", image: "/staff-images/10.png" },
 ];
+
+export const staffImages: StaffImage[] = staffImagePaths.map((staff) => ({
+  ...staff,
+  image: assetUrl(staff.image),
+}));

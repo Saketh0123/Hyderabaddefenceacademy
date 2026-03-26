@@ -1,4 +1,6 @@
-export const farewellGirlsImages: string[] = [
+import { assetUrl } from "./assetUrl";
+
+const farewellGirlsImagePaths: string[] = [
   // Add Farewell Girls image paths from public/farewell-girls-images/.
   // Example:
   // "/farewell-girls-images/farewell-girls-1.jpg",
@@ -47,3 +49,5 @@ export const farewellGirlsImages: string[] = [
   "/farewell-girls-images/IMG_9959.JPG",
   "/farewell-girls-images/IMG_9982.JPG",
 ];
+
+export const farewellGirlsImages: string[] = farewellGirlsImagePaths.map(assetUrl);

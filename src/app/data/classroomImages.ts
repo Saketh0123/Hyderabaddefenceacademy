@@ -1,4 +1,6 @@
-export const classroomImages: string[] = [
+import { assetUrl } from "./assetUrl";
+
+const classroomImagePaths: string[] = [
   // Add Classroom image paths from public/classroom-images/.
   // Example:
   // "/classroom-images/classroom-1.jpg",
@@ -36,3 +38,5 @@ export const classroomImages: string[] = [
   "/classroom-images/DJI_20251120165309_0327_D.JPG",
   "/classroom-images/DJI_20251130134537_0231_D.JPG",
 ];
+
+export const classroomImages: string[] = classroomImagePaths.map(assetUrl);

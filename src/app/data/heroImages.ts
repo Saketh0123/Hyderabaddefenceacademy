@@ -1,9 +1,11 @@
+import { assetUrl } from "./assetUrl";
+
 export type HeroImage = {
   src: string;
   alt: string;
 };
 
-export const heroImages: HeroImage[] = [
+const heroImagePaths: HeroImage[] = [
   // 1) Paste image files into: public/hero-images/
   // 2) Add entries below using: /hero-images/<file-name>
   // Example:
@@ -16,3 +18,8 @@ export const heroImages: HeroImage[] = [
   { src: "/hero-images/hero5_11zon.jpg", alt: "Hyderabad Defence Academy hero image 5" },
   { src: "/hero-images/hero6_11zon.jpg", alt: "Hyderabad Defence Academy hero image 6" },
 ];
+
+export const heroImages: HeroImage[] = heroImagePaths.map((image) => ({
+  ...image,
+  src: assetUrl(image.src),
+}));
