@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import Masonry from "react-responsive-masonry";
 import { freshersImages } from "../data/freshersImages";
@@ -59,6 +59,41 @@ export function GalleryPage() {
   }, [category]);
 
   const categoryData = category ? galleryData[category] : null;
+
+  const showPreviousImage = () => {
+    if (!categoryData || selectedImage === null || categoryData.images.length === 0) {
+      return;
+    }
+
+    setSelectedImage((selectedImage - 1 + categoryData.images.length) % categoryData.images.length);
+  };
+
+  const showNextImage = () => {
+    if (!categoryData || selectedImage === null || categoryData.images.length === 0) {
+      return;
+    }
+
+    setSelectedImage((selectedImage + 1) % categoryData.images.length);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (selectedImage === null) {
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPreviousImage();
+      } else if (event.key === "ArrowRight") {
+        showNextImage();
+      } else if (event.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedImage, categoryData]);
 
   if (!categoryData) {
     return (
@@ -134,6 +169,29 @@ export function GalleryPage() {
             >
               <X size={24} />
             </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                showPreviousImage();
+              }}
+              className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={24} />
+            </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                showNextImage();
+              }}
+              className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+              aria-label="Next image"
+            >
+              <ChevronRight size={24} />
+            </button>
+
             <motion.img
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}

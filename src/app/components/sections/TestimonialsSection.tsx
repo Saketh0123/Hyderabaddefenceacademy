@@ -52,6 +52,7 @@ export function TestimonialsSection() {
   const [cardsPerSlide, setCardsPerSlide] = useState(3);
   const [activeSlide, setActiveSlide] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -76,7 +77,7 @@ export function TestimonialsSection() {
   }, [slides.length]);
 
   useEffect(() => {
-    if (slides.length <= 1) {
+    if (slides.length <= 1 || isPaused) {
       return;
     }
 
@@ -86,7 +87,7 @@ export function TestimonialsSection() {
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [slides.length, isPaused]);
 
   const goToPrev = () => {
     if (slides.length <= 1) {
@@ -142,7 +143,14 @@ export function TestimonialsSection() {
           </p>
         </motion.div>
 
-        <div className="relative overflow-hidden">
+        <div
+          className="relative overflow-hidden"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+          onTouchCancel={() => setIsPaused(false)}
+        >
           <AnimatePresence custom={direction} mode="wait" initial={false}>
             <motion.div
               key={activeSlide}

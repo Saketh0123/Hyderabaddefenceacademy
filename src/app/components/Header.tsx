@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -7,6 +7,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === "/";
 
   useEffect(() => {
@@ -22,6 +23,22 @@ export function Header() {
     setIsMobileMenuOpen(false);
   }, [location]);
 
+  useEffect(() => {
+    if (!location.hash) {
+      return;
+    }
+
+    const sectionId = location.hash.replace("#", "");
+    const timer = window.setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 120);
+
+    return () => window.clearTimeout(timer);
+  }, [location]);
+
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/#about" },
@@ -33,6 +50,11 @@ export function Header() {
   const handleNavClick = (path: string) => {
     if (path.includes("#")) {
       const sectionId = path.split("#")[1];
+      if (location.pathname !== "/") {
+        navigate(`/#${sectionId}`);
+        return;
+      }
+
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });

@@ -25,10 +25,12 @@ const farewellGirlsThumbnail =
   "https://images.unsplash.com/photo-1571071481471-a20b04ecd6ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXJld2VsbCUyMHN0dWRlbnRzJTIwZW1vdGlvbmFsfGVufDF8fHx8MTc3MzkzMjgzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 
 const trainingThumbnail =
-  "/training-images/_DSC4324.JPG";
+  trainingImages[0] ??
+  "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
 
 const warriorMindsetThumbnail =
-  "/warrior-mindset-images/0S2A2748.JPG";
+  warriorMindsetImages[0] ??
+  "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
 
 const categories = [
   {
