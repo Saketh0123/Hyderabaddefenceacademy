@@ -1,4 +1,4 @@
-const RAW_BASE_URL = "https://raw.githubusercontent.com/Saketh0123/Hyderabaddefenceacademy/main/public";
+const RAW_BASE_URL = "https://github.com/Saketh0123/Hyderabaddefenceacademy/raw/main/public";
 
 export function assetUrl(path: string): string {
   if (!path.startsWith("/")) {
