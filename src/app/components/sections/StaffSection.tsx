@@ -23,9 +23,9 @@ const staffMembers = [
   { id: "3", name: "MR Anjaiah.M", role: "Principal", image: getStaffImage("3", ""), experience: "Experienced Academic Leader", qualification: "MA, M.Ed, M.Phil" },
   { id: "9", name: "Brigadier Prashant Halgeri", role: "Chief Advisor", image: getStaffImage("9", ""), experience: "36+ Years (Indian Army Leadership & Strategic Operations)", qualification: "M.Sc., M.Phil (Defence & Strategic Studies), MBA" },
   { id: "10", name: "Col. Shashir Kumar Das", role: "Chief Advisor", image: getStaffImage("10", ""), experience: "Senior Leadership Experience", qualification: "NCC Group Commander" },
-  { id: "6", name: "Prof. CSVS Murthy", role: "NDA Faculty", image: getStaffImage("6", ""), experience: "Experienced NDA Faculty", qualification: "Defence Exam Specialist" },
-  { id: "8", name: "Prof. Raghu Kumar", role: "NDA Faculty", image: getStaffImage("8", ""), experience: "Experienced NDA Faculty", qualification: "Defence Exam Specialist" },
   { id: "7", name: "Prof. D. Narayana Rao", role: "NDA Faculty", image: getStaffImage("7", ""), experience: "Experienced NDA Faculty", qualification: "Defence Exam Specialist" },
+  { id: "8", name: "Prof. Raghu Kumar", role: "NDA Faculty", image: getStaffImage("8", ""), experience: "Experienced NDA Faculty", qualification: "Defence Exam Specialist" },
+  { id: "6", name: "Prof. CSVS Murthy", role: "NDA Faculty", image: getStaffImage("6", ""), experience: "Experienced NDA Faculty", qualification: "Defence Exam Specialist" },
   { id: "5", name: "Ramalingam.T", role: "Mathematics Faculty", image: getStaffImage("5", ""), experience: "25+ Years (Mathematics Teaching & Competitive Exam Training)", qualification: "M.Sc., M.Ed., M.Phil" },
 ];
 
