@@ -141,10 +141,7 @@ export function ContactSection() {
           >
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
-              <p className="text-gray-600 mb-8">
-                We're here to help and answer any questions you might have. 
-                We look forward to hearing from you.
-              </p>
+              <p className="text-gray-600 mb-8">We're here to help and answer any questions you might have. We look forward to hearing from you.</p>
             </div>
 
             <div className="space-y-6">
@@ -154,11 +151,24 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">Address</h4>
-                  <p className="text-gray-600">
-                    Hyderabad Defence Academy, Rangapur, Keesara,<br />
-                    Near ECIL X Roads (former KITES Institute Building),<br />
-                    Hyderabad, Telangana - Pincode 508126
-                  </p>
+                  <a
+                    href="https://maps.google.com/maps?sca_esv=0693a25b4e112fe7&sxsrf=ANbL-n7-jdl8hYl05VAxImDlUSRxnpT9vA:1774548291930&iflsig=AFdpzrgAAAAAacWDU4sHNb6S3gjbV-zgL8Kf8kKeh3GO&gs_lp=Egdnd3Mtd2l6IgxoeWRlcmFiYWQgZGUqAggAMgQQIxgnMhMQLhiABBhDGMcBGIoFGI4FGK8BMgUQABiABDIKEAAYgAQYFBiHAjIKEAAYgAQYQxiKBTIOEC4YgAQYxwEYjgUYrwEyChAAGIAEGEMYigUyBRAAGIAEMgUQABiABDIKEC4YgAQYQxiKBUiSelDWEVjWRnABeACQAQCYAYUwoAGnowGqAQM5LTS4AQHIAQD4AQGYAgWgAumjAagCCsICBxAjGCcY6gLCAgoQIxgnGMkCGOoCwgINECMY8AUYJxjqAhieBsICDRAjGPAFGCcYyQIY6gLCAgoQIxiABBgnGIoFwgIQECMY8AUYgAQYJxjJAhiKBcICDhAAGIAEGJECGLEDGIoFwgINEC4YgAQYsQMYFBiHAsICDRAAGIAEGLEDGEMYigXCAggQABiABBixA8ICERAuGIAEGLEDGMcBGI4FGK8BwgINEAAYgAQYsQMYFBiHApgDFfEFiYpNcuuZXPmSBwUxLjktNKAH6zqyBwM5LTS4B9SjAcIHAzMtNcgHNoAIAA&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KVc9prjgd8s7McALjzi2t_YD&daddr=GSR+ROAD,+NEW,+Keesara,+Rangapur,+Telangana+508126"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:underline"
+                  >
+                    Hyderabad Defence Academy, Rangapur, Keesara,
+                    <br />
+                    Hyderabad, Telangana - 508126
+                  </a>
+                </div>
+              </div>
+
+              <div className="pt-4">
+                <h4 className="font-semibold text-gray-900 mb-3">Our Branches</h4>
+                <div className="flex flex-col text-gray-600 gap-2">
+                  <a href="https://maps.google.com/maps?sca_esv=0693a25b4e112fe7&daddr=GSR+ROAD,+NEW,+Keesara,+Rangapur,+Telangana+508126" target="_blank" rel="noopener noreferrer" className="hover:underline">Keesara</a>
+                  <a href="https://maps.google.com/maps?sca_esv=0693a25b4e112fe7&daddr=Yadagirigutta" target="_blank" rel="noopener noreferrer" className="hover:underline">Yadagirigutta</a>
                 </div>
               </div>
 
@@ -169,10 +179,10 @@ export function ContactSection() {
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">Phone</h4>
                   <div className="text-gray-600 space-y-1">
-                    <p>9515234222</p>
-                    <p>8008122933</p>
-                    <p>7893319710</p>
-                    <p>9985319710</p>
+                    <a className="block text-gray-600 hover:underline" href="tel:+919515234222">+91 95152 34222</a>
+                    <a className="block text-gray-600 hover:underline" href="tel:+918008122933">+91 80081 22933</a>
+                    <a className="block text-gray-600 hover:underline" href="tel:+917893319710">+91 78933 19710</a>
+                    <a className="block text-gray-600 hover:underline" href="tel:+919985319710">+91 99853 19710</a>
                   </div>
                 </div>
               </div>
@@ -183,7 +193,12 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">Email</h4>
-                  <p className="text-gray-600">hyderabaddefenceacademy@gmail.com</p>
+                  <a
+                    href={`mailto:hyderabaddefenceacademy@gmail.com?subject=${encodeURIComponent("Inquiry from Website")}&body=${encodeURIComponent("Hello Hyderabad Defence Academy,\n\nI would like to enquire about...")}`}
+                    className="text-gray-600 hover:underline"
+                  >
+                    hyderabaddefenceacademy@gmail.com
+                  </a>
                 </div>
               </div>
             </div>
@@ -191,7 +206,7 @@ export function ContactSection() {
             {/* WhatsApp CTA */}
             <div className="pt-6">
               <a
-                href="https://wa.me/919515234222"
+                href={`https://wa.me/919515234222?text=${encodeURIComponent("Hello Hyderabad Defence Academy, I would like to enquire about...")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"

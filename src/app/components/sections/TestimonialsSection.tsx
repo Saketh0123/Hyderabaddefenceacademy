@@ -19,7 +19,7 @@ const testimonials = [
   },
   {
     name: "Bandaru Dattatraya",
-    role: "Former Member of the Lok Sabha and Governor",
+    role: "Former governer of Haryana.",
     image: "https://www.newsbharati.com/Encyc/2021/7/15/2_02_35_54_Bandaru-Dattatreya_1_H@@IGHT_360_W@@IDTH_600.jpg",
     quote:
       "I appreciate the academy's values-driven atmosphere, experienced staff, and systematic preparation that guides students towards national service.",
@@ -48,21 +48,21 @@ const testimonials = [
   },
   {
     name: "JD Laxminarayana",
-    role: "Politician, Former IPS",
+    role: "IPS and Joint Director of the CBI",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwl7Hlo6z72A5O0TLp9H-EZQOHQ_wBOGNUiA&s",
     quote:
       "Hyderabad Defence Academy's rigorous training and mentorship prepare aspirants not just for exams but for disciplined service to the nation.",
   },
   {
-    name: "Kanwal Sandhu (Surya Kiran Team)",
-    role: "Indian Air Force",
+    name: "Kanwal Sandhu",
+    role: "Flight Lieutenant, Surya Kiran team - Indian Air Force",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqIbj_0YHU6g1fx1XHIp0_Rv3yBjxaDAozRQ&s",
     quote:
       "The academy's focus on physical fitness, leadership and technical excellence aligns well with the high standards expected by the defence services.",
   },
   {
     name: "Yegge Mallesham",
-    role: "Member of Legislative Assembly",
+    role: "Member of Legislative Concil",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8ZTckYlaIrZMDIsFdHgirB5jyn8nw2Hw0ng&s",
     quote:
       "Hyderabad Defence Academy builds strong foundations — discipline, resilience, and practical training that prepare students for real challenges.",

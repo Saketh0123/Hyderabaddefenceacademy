@@ -63,19 +63,19 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-gray-600">
                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
-                <span>Rangapur, Keesara, Near ECIL X Roads, Hyderabad, Telangana - 508126</span>
+                <a href="https://maps.google.com/maps?daddr=GSR+ROAD,+NEW,+Keesara,+Rangapur,+Telangana+508126" target="_blank" rel="noopener noreferrer" className="hover:underline">Rangapur, Keesara, Hyderabad, Telangana - 508126</a>
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-600">
                 <Phone size={16} className="flex-shrink-0" />
                 <div className="flex flex-col">
-                  <span>9515234222</span>
-                  <span>8008122933</span>
-                  <span>7893319710</span>
+                  <a href="tel:+919515234222" className="hover:underline">+91 95152 34222</a>
+                  <a href="tel:+918008122933" className="hover:underline">+91 80081 22933</a>
+                  <a href="tel:+917893319710" className="hover:underline">+91 78933 19710</a>
                 </div>
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-600">
                 <Mail size={16} className="flex-shrink-0" />
-                <span className="break-all">hyderabaddefenceacademy@gmail.com</span>
+                <a href={`mailto:hyderabaddefenceacademy@gmail.com?subject=${encodeURIComponent("Inquiry from Website")}`} className="break-all hover:underline">hyderabaddefenceacademy@gmail.com</a>
               </li>
             </ul>
           </div>

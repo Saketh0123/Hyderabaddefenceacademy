@@ -154,8 +154,16 @@ export function HeroSection() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-tight whitespace-pre-line bg-gradient-to-b from-[#FFF8CC] via-[#F0CC66] to-[#A87400] bg-clip-text text-transparent [-webkit-text-stroke:1.5px_rgba(88,58,0,0.7)] [text-shadow:0_4px_16px_rgba(0,0,0,0.45),0_0_24px_rgba(255,214,102,0.35)]">
-                {heroSlides[currentSlide].title}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-tight bg-gradient-to-b from-[#FFF8CC] via-[#F0CC66] to-[#A87400] bg-clip-text text-transparent [-webkit-text-stroke:1.5px_rgba(88,58,0,0.7)] [text-shadow:0_4px_16px_rgba(0,0,0,0.45),0_0_24px_rgba(255,214,102,0.35)]">
+                {currentSlide === 0 ? (
+                  <>
+                    <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black">WELCOME TO</span>
+                    <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black">SOUTH INDIAS</span>
+                    <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black">NO 1 DEFENCE ACADEMY</span>
+                  </>
+                ) : (
+                  heroSlides[currentSlide].title
+                )}
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
                 {heroSlides[currentSlide].subtitle}
