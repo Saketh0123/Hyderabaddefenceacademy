@@ -17,4 +17,21 @@
   4. Run `npm run dev:full` to start both frontend and backend.
 
   The frontend contact form sends data to `/api/contact` and the backend sends email using Nodemailer.
+
+  ## Vercel mail setup
+
+  For Vercel deployments, contact email is sent from the serverless function at `api/contact.js`.
+
+  Add these Environment Variables in Vercel Project Settings:
+  - `SMTP_HOST`
+  - `SMTP_PORT`
+  - `SMTP_SECURE`
+  - `SMTP_USER`
+  - `SMTP_PASS`
+  - `SMTP_FROM`
+  - `CONTACT_TO`
+
+  ## Image loading on deployment
+
+  This project stores image assets using Git LFS. A `prebuild` script runs `git lfs pull && git lfs checkout` before `vite build` so hardcoded image paths in `public/*` resolve to real files during deployment.
   
