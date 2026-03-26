@@ -14,13 +14,13 @@ const stats = [
   },
   {
     icon: Trophy,
-    value: "500+",
-    label: "Success Stories",
+    value: "93%",
+    label: "Success rate in defence services",
   },
   {
     icon: Award,
-    value: "100+",
-    label: "Events Covered",
+    value: "96.8%",
+    label: "Merit in intermediate",
   },
 ];
 

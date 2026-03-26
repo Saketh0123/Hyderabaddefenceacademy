@@ -165,10 +165,17 @@ export function ContactSection() {
               </div>
 
               <div className="pt-4">
-                <h4 className="font-semibold text-gray-900 mb-3">Our Branches</h4>
-                <div className="flex flex-col text-gray-600 gap-2">
-                  <a href="https://maps.google.com/maps?sca_esv=0693a25b4e112fe7&daddr=GSR+ROAD,+NEW,+Keesara,+Rangapur,+Telangana+508126" target="_blank" rel="noopener noreferrer" className="hover:underline">Keesara</a>
-                  <a href="https://maps.google.com/maps?sca_esv=0693a25b4e112fe7&daddr=Yadagirigutta" target="_blank" rel="noopener noreferrer" className="hover:underline">Yadagirigutta</a>
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center">
+                    <img src="https://hyderabaddefenceacademy.com/assets/uploads/logo.png" alt="HDA logo" className="h-6 w-auto" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-3">Our Branches</h4>
+                    <div className="flex flex-col text-gray-600 gap-2 mt-2">
+                      <a href="https://maps.google.com/maps?sca_esv=0693a25b4e112fe7&daddr=GSR+ROAD,+NEW,+Keesara,+Rangapur,+Telangana+508126" target="_blank" rel="noopener noreferrer" className="hover:underline">Keesara</a>
+                      <a href="https://maps.google.com/maps?sca_esv=0693a25b4e112fe7&daddr=Yadagirigutta" target="_blank" rel="noopener noreferrer" className="hover:underline">Yadagirigutta</a>
+                    </div>
+                  </div>
                 </div>
               </div>
 

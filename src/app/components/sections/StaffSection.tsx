@@ -20,7 +20,7 @@ const staffMembers = [
     qualification: "LLB, MBA",
   },
   { id: "2", name: "Dr. R.K. Rao", role: "Chief Mentor", image: getStaffImage("2", ""), experience: "30+ Years (Indian Air Force + Academic Leadership)", qualification: "B.E., MBA" },
-  { id: "3", name: "Mr Anjaiah M.", role: "Principal", image: getStaffImage("3", ""), experience: "Experienced Academic Leader", qualification: "MA, M.Ed, M.Phil" },
+  { id: "3", name: "MR Anjaiah.M", role: "Principal", image: getStaffImage("3", ""), experience: "Experienced Academic Leader", qualification: "MA, M.Ed, M.Phil" },
   { id: "9", name: "Brigadier Prashant Halgeri", role: "Chief Advisor", image: getStaffImage("9", ""), experience: "36+ Years (Indian Army Leadership & Strategic Operations)", qualification: "M.Sc., M.Phil (Defence & Strategic Studies), MBA" },
   { id: "10", name: "Col. Shashir Kumar Das", role: "Chief Advisor", image: getStaffImage("10", ""), experience: "Senior Leadership Experience", qualification: "NCC Group Commander" },
   { id: "6", name: "Prof. CSVS Murthy", role: "NDA Faculty", image: getStaffImage("6", ""), experience: "Experienced NDA Faculty", qualification: "Defence Exam Specialist" },
@@ -142,50 +142,26 @@ export function StaffSection() {
               </div>
             </motion.div>
 
-            <div className="flex gap-4">
-              <div className="flex-1 space-y-4">
-                {leftColumn.map((staff, i) => (
-                  <motion.div
-                    key={staff.id}
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.35, delay: i * 0.04 }}
-                    onClick={() => handleStaffClick(staff.id)}
-                    className="bg-white rounded-xl overflow-hidden shadow-sm cursor-pointer"
-                  >
-                    <div className="h-32 overflow-hidden">
-                      <img src={staff.image} alt={staff.name} className="w-full h-full object-cover" />
-                    </div>
-                    <div className="p-2">
-                      <h3 className="text-xs font-bold text-gray-900 line-clamp-1">{staff.name}</h3>
-                      <p className="text-[10px] text-blue-900">{staff.role}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="flex-1 space-y-4">
-                {rightColumn.map((staff, i) => (
-                  <motion.div
-                    key={staff.id}
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.35, delay: i * 0.04 }}
-                    onClick={() => handleStaffClick(staff.id)}
-                    className="bg-white rounded-xl overflow-hidden shadow-sm cursor-pointer"
-                  >
-                    <div className="h-32 overflow-hidden">
-                      <img src={staff.image} alt={staff.name} className="w-full h-full object-cover" />
-                    </div>
-                    <div className="p-2">
-                      <h3 className="text-xs font-bold text-gray-900 line-clamp-1">{staff.name}</h3>
-                      <p className="text-[10px] text-blue-900">{staff.role}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+            <div className="grid grid-cols-2 gap-4">
+              {otherStaff.map((staff, i) => (
+                <motion.div
+                  key={staff.id}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: i * 0.04 }}
+                  onClick={() => handleStaffClick(staff.id)}
+                  className="bg-white rounded-xl overflow-hidden shadow-sm cursor-pointer"
+                >
+                  <div className="h-32 overflow-hidden">
+                    <img src={staff.image} alt={staff.name} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-2">
+                    <h3 className="text-xs font-bold text-gray-900 line-clamp-1">{staff.name}</h3>
+                    <p className="text-[10px] text-blue-900">{staff.role}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         )}
