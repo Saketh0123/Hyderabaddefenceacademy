@@ -57,7 +57,7 @@ const heroSlides =
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(1);
-  const [loadedMap, setLoadedMap] = useState<Record<number, boolean>>({});
+  const [loadedAll, setLoadedAll] = useState(false);
 
   const handleExploreClick = () => {
     const gallerySection = document.getElementById("gallery");
@@ -81,33 +81,30 @@ export function HeroSection() {
     setCurrentSlide(index);
   };
 
+  // Preload all images (non-blocking). Start autoplay only after all images loaded.
   useEffect(() => {
+    let mounted = true;
+    const loaders = heroSlides.map((s) =>
+      new Promise((res) => {
+        const img = new Image();
+        img.src = s.image;
+        img.onload = () => res(true);
+        img.onerror = () => res(true);
+      })
+    );
+    Promise.all(loaders).then(() => {
+      if (mounted) setLoadedAll(true);
+    });
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!loadedAll) return;
     const timer = setInterval(goToNext, 5000);
     return () => clearInterval(timer);
-  }, [goToNext]);
-
-  // preload current slide's full image and mark as loaded when ready
-  useEffect(() => {
-    const idx = currentSlide;
-    if (loadedMap[idx]) return;
-    const img = new Image();
-    img.src = heroSlides[idx].image;
-    img.onload = () => setLoadedMap((s) => ({ ...s, [idx]: true }));
-    // optionally preload next slide
-    const nextIdx = (idx + 1) % heroSlides.length;
-    if (!loadedMap[nextIdx]) {
-      const img2 = new Image();
-      img2.src = heroSlides[nextIdx].image;
-      img2.onload = () => setLoadedMap((s) => ({ ...s, [nextIdx]: true }));
-    }
-  }, [currentSlide, loadedMap]);
-
-  function makeThumbUrl(fullUrl: string) {
-    // insert -thumb before the extension, preserve querystring
-    return fullUrl.replace(/([^?#]+)(\.[^.\/?#]+)([?#]?.*)$/, (m, p1, ext, rest) => {
-      return `${p1}-thumb${ext}${rest}`;
-    });
-  }
+  }, [loadedAll, goToNext]);
 
   const slideVariants = {
     enter: (dir: number) => ({
@@ -138,15 +135,10 @@ export function HeroSection() {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          {
-            // show tiny LQIP thumb first, swap to full image when preloaded
-          }
           <img
-            src={loadedMap[currentSlide] ? heroSlides[currentSlide].image : makeThumbUrl(heroSlides[currentSlide].image)}
+            src={heroSlides[currentSlide].image}
             alt={heroSlides[currentSlide].alt}
             className="w-full h-full object-cover"
-            loading="eager"
-            fetchPriority="high"
           />
         </motion.div>
       </AnimatePresence>
