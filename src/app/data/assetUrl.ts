@@ -18,12 +18,17 @@ export function assetUrl(path: string): string {
 
 export function thumbPath(path: string): string {
   if (!path.startsWith("/")) return path;
-  return path.replace(/(\.[^/.]+)$/, "-thumb$1");
+  return path.replace(/(\.[^/.]+)$/, "-thumb-480$1");
 }
 
 export function imageEntry(path: string) {
+  const thumb480 = assetUrl(thumbPath(path));
+  const thumb800 = assetUrl(path.replace(/(\.[^/.]+)$/, "-thumb-800$1"));
+  const srcSet = `${thumb480} 480w, ${thumb800} 800w`;
   return {
-    thumbnail: assetUrl(thumbPath(path)),
+    thumbnail: thumb480,
+    thumbLarge: thumb800,
+    srcSet,
     full: assetUrl(path),
   };
 }

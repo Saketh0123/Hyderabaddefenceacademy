@@ -179,6 +179,8 @@ export function GalleryPage() {
               >
                   <img
                     src={thumb}
+                    srcSet={typeof image === "string" ? undefined : image.srcSet}
+                    sizes="(min-width:1024px) calc((100vw - 4rem)/3), (min-width:768px) calc((100vw - 2rem)/2), 100vw"
                     alt={`${categoryData.name} ${index + 1}`}
                     loading="lazy"
                     decoding="async"
