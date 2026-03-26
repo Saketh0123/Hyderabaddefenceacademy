@@ -13,7 +13,8 @@ export function assetUrl(path: string): string {
     return path;
   }
 
-  return `${RAW_BASE_URL}${path}`;
+  // Ensure the final URL is properly encoded (spaces, parentheses, etc.)
+  return encodeURI(`${RAW_BASE_URL}${path}`);
 }
 
 export function thumbPath(path: string): string {
