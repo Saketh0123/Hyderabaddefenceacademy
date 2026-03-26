@@ -10,14 +10,7 @@ import { classroomImages } from "../data/classroomImages";
 import { trainingImages } from "../data/trainingImages";
 import { warriorMindsetImages } from "../data/warriorMindsetImages";
 
-type ImageItem =
-  | string
-  | {
-      thumbnail: string;
-      thumbLarge?: string;
-      srcSet?: string;
-      full: string;
-    };
+type ImageItem = string | { thumbnail: string; full: string };
 
 const galleryData: Record<string, { name: string; images: ImageItem[] }> = {
   classrooms: {
@@ -186,24 +179,10 @@ export function GalleryPage() {
               >
                   <img
                     src={thumb}
-                    srcSet={typeof image === "string" ? undefined : image.srcSet}
-                    sizes="(min-width:1024px) calc((100vw - 4rem)/3), (min-width:768px) calc((100vw - 2rem)/2), 100vw"
                     alt={`${categoryData.name} ${index + 1}`}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-auto transition-transform duration-500 group-hover:scale-110"
-                    onError={(e) => {
-                      const img = e.currentTarget as HTMLImageElement;
-                      // try fallback: replace -thumb-480 with -thumb (existing pre-generated files)
-                      if (img.src.includes("-thumb-480")) {
-                        img.src = img.src.replace("-thumb-480", "-thumb");
-                        return;
-                      }
-                      // as last resort, show full image
-                      if (typeof image !== "string") {
-                        img.src = image.full;
-                      }
-                    }}
                   />
                 </motion.div>
               );

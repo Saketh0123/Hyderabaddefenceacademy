@@ -13,23 +13,17 @@ export function assetUrl(path: string): string {
     return path;
   }
 
-  // Ensure the final URL is properly encoded (spaces, parentheses, etc.)
-  return encodeURI(`${RAW_BASE_URL}${path}`);
+  return `${RAW_BASE_URL}${path}`;
 }
 
 export function thumbPath(path: string): string {
   if (!path.startsWith("/")) return path;
-  return path.replace(/(\.[^/.]+)$/, "-thumb-480$1");
+  return path.replace(/(\.[^/.]+)$/, "-thumb$1");
 }
 
 export function imageEntry(path: string) {
-  const thumb480 = assetUrl(thumbPath(path));
-  const thumb800 = assetUrl(path.replace(/(\.[^/.]+)$/, "-thumb-800$1"));
-  const srcSet = `${thumb480} 480w, ${thumb800} 800w`;
   return {
-    thumbnail: thumb480,
-    thumbLarge: thumb800,
-    srcSet,
+    thumbnail: assetUrl(thumbPath(path)),
     full: assetUrl(path),
   };
 }

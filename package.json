@@ -9,8 +9,7 @@
     "server": "node server/index.mjs",
     "dev:full": "concurrently -k \"npm run server\" \"npm run dev\"",
     "compress:hero-images": "node scripts/compress-hero-images.mjs",
-    "gen:thumbs": "node scripts/generate-thumbs.mjs",
-    "prebuild": "node scripts/prebuild.mjs"
+    "gen:thumbs": "node scripts/generate-thumbs.mjs"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
