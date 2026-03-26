@@ -44,11 +44,12 @@ export function Header() {
     { name: "About", path: "/#about" },
     { name: "Gallery", path: "/#gallery" },
     { name: "Staff", path: "/#staff" },
-    { name: "Contact", path: "/#contact" },
+    { name: "Contact", path: "/contact#contact-form" },
   ];
 
   const handleNavClick = (path: string) => {
-    if (path.includes("#")) {
+    // If path is an in-page anchor (starts with '/#'), scroll on the same page
+    if (path.startsWith("/#")) {
       const sectionId = path.split("#")[1];
       if (location.pathname !== "/") {
         navigate(`/#${sectionId}`);
@@ -59,7 +60,11 @@ export function Header() {
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
+      return;
     }
+
+    // For full routes (including hashes like /contact#contact-form) just navigate normally
+    navigate(path);
   };
 
   return (

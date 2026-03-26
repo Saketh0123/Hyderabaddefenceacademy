@@ -65,8 +65,8 @@ const categories = [
     image: trainingThumbnail,
   },
   {
-    id: "warrior-mindset-programme",
-    name: "Warrior Mindset Programme",
+    id: "warrior-mindset-program",
+    name: "Warrior Mindset Program",
     image: warriorMindsetThumbnail,
   },
 ];

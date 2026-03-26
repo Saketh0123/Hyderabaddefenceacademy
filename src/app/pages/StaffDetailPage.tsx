@@ -322,13 +322,7 @@ export function StaffDetailPage() {
                   </p>
                   <button
                     onClick={() => {
-                      navigate("/");
-                      setTimeout(() => {
-                        const contactSection = document.getElementById("contact");
-                        if (contactSection) {
-                          contactSection.scrollIntoView({ behavior: "smooth" });
-                        }
-                      }, 100);
+                      navigate("/contact#contact-form");
                     }}
                     className="px-8 py-3 bg-white text-blue-900 rounded-lg hover:bg-gray-100 transition-colors font-medium"
                   >

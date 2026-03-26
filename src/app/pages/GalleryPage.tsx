@@ -44,8 +44,8 @@ const galleryData: Record<string, { name: string; images: ImageItem[] }> = {
     name: "Training",
     images: trainingImages,
   },
-  "warrior-mindset-programme": {
-    name: "Warrior Mindset Programme",
+  "warrior-mindset-program": {
+    name: "Warrior Mindset Program",
     images: warriorMindsetImages,
   },
 };

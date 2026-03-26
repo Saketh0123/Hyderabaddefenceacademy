@@ -211,7 +211,7 @@ export function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg">
+            <form id="contact-form" onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg">
               <div className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">

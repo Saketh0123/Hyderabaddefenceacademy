@@ -46,6 +46,27 @@ const testimonials = [
     quote:
       "Hyderabad Defence Academy has built an excellent learning ecosystem with quality infrastructure, disciplined routines, and supportive staff committed to student success.",
   },
+  {
+    name: "JD Laxminarayana",
+    role: "Politician, Former IPS",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwl7Hlo6z72A5O0TLp9H-EZQOHQ_wBOGNUiA&s",
+    quote:
+      "Hyderabad Defence Academy's rigorous training and mentorship prepare aspirants not just for exams but for disciplined service to the nation.",
+  },
+  {
+    name: "Kanwal Sandhu (Surya Kiran Team)",
+    role: "Indian Air Force",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqIbj_0YHU6g1fx1XHIp0_Rv3yBjxaDAozRQ&s",
+    quote:
+      "The academy's focus on physical fitness, leadership and technical excellence aligns well with the high standards expected by the defence services.",
+  },
+  {
+    name: "Yegge Mallesham",
+    role: "Member of Legislative Assembly",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8ZTckYlaIrZMDIsFdHgirB5jyn8nw2Hw0ng&s",
+    quote:
+      "Hyderabad Defence Academy builds strong foundations — discipline, resilience, and practical training that prepare students for real challenges.",
+  },
 ];
 
 export function TestimonialsSection() {
@@ -70,10 +91,11 @@ export function TestimonialsSection() {
       groups.push(testimonials.slice(i, i + cardsPerSlide));
     }
     return groups;
-  }, [cardsPerSlide]);
+  }, [cardsPerSlide, testimonials.length]);
 
   useEffect(() => {
-    setActiveSlide((prev) => Math.min(prev, Math.max(0, slides.length - 1)));
+    // Reset to 0 when slides layout changes to avoid blank gap during transition
+    setActiveSlide(0);
   }, [slides.length]);
 
   useEffect(() => {
@@ -153,7 +175,8 @@ export function TestimonialsSection() {
         >
           <AnimatePresence custom={direction} mode="wait" initial={false}>
             <motion.div
-              key={activeSlide}
+              // clamp activeSlide in case slides changed
+              key={Math.min(activeSlide, Math.max(0, slides.length - 1))}
               custom={direction}
               variants={slideVariants}
               initial="enter"
@@ -162,7 +185,7 @@ export function TestimonialsSection() {
               transition={{ duration: 0.45, ease: "easeInOut" }}
               className="grid grid-cols-1 md:grid-cols-3 gap-8"
             >
-              {slides[activeSlide]?.map((testimonial) => (
+              {(slides[Math.min(activeSlide, Math.max(0, slides.length - 1))] || []).map((testimonial) => (
                 <div key={testimonial.name} className={cardClass}>
                   <div className="absolute top-6 right-6 text-blue-900/10">
                     <Quote size={48} />

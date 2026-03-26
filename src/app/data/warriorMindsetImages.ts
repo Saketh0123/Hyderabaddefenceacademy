@@ -1,7 +1,7 @@
 import { imageEntry } from "./assetUrl";
 
 const warriorMindsetImagePaths: string[] = [
-  // Add Warrior Mindset Programme image paths from public/warrior-mindset-images/.
+  // Add Warrior Mindset Program image paths from public/warrior-mindset-images/.
   // Example:
   // "/warrior-mindset-images/warrior-mindset-1.jpg",
   // "/warrior-mindset-images/warrior-mindset-2.jpg",
