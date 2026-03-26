@@ -1,4 +1,4 @@
-import { assetUrl } from "./assetUrl";
+import { imageEntry } from "./assetUrl";
 
 const trainingImagePaths: string[] = [
   // Add Training image paths from public/training-images/.
@@ -33,4 +33,4 @@ const trainingImagePaths: string[] = [
   "/training-images/_DSC4599.JPG",
 ];
 
-export const trainingImages: string[] = trainingImagePaths.map(assetUrl);
+export const trainingImages = trainingImagePaths.map(imageEntry);

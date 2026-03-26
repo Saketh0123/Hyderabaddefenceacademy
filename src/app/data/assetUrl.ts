@@ -15,3 +15,15 @@ export function assetUrl(path: string): string {
 
   return `${RAW_BASE_URL}${path}`;
 }
+
+export function thumbPath(path: string): string {
+  if (!path.startsWith("/")) return path;
+  return path.replace(/(\.[^/.]+)$/, "-thumb$1");
+}
+
+export function imageEntry(path: string) {
+  return {
+    thumbnail: assetUrl(thumbPath(path)),
+    full: assetUrl(path),
+  };
+}

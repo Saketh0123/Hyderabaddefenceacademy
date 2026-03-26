@@ -1,4 +1,4 @@
-import { assetUrl } from "./assetUrl";
+import { imageEntry } from "./assetUrl";
 
 const freshersImagePaths: string[] = [
   // Add Freshers image paths from public/freshers-images/.
@@ -28,4 +28,4 @@ const freshersImagePaths: string[] = [
   "/freshers-images/IMG_1435.JPG",
 ];
 
-export const freshersImages: string[] = freshersImagePaths.map(assetUrl);
+export const freshersImages = freshersImagePaths.map(imageEntry);

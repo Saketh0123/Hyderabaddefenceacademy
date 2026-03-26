@@ -10,7 +10,9 @@ import { classroomImages } from "../data/classroomImages";
 import { trainingImages } from "../data/trainingImages";
 import { warriorMindsetImages } from "../data/warriorMindsetImages";
 
-const galleryData: Record<string, { name: string; images: string[] }> = {
+type ImageItem = string | { thumbnail: string; full: string };
+
+const galleryData: Record<string, { name: string; images: ImageItem[] }> = {
   classrooms: {
     name: "Classrooms",
     images: classroomImages,
@@ -52,6 +54,7 @@ export function GalleryPage() {
   const { category } = useParams();
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [fullLoaded, setFullLoaded] = useState(false);
 
   // Scroll to top when navigating to this page
   useEffect(() => {
@@ -95,6 +98,36 @@ export function GalleryPage() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedImage, categoryData]);
 
+  // Preload high-res when lightbox opens and preload neighbors
+  useEffect(() => {
+    if (selectedImage === null || !categoryData) return;
+
+    setFullLoaded(false);
+    const item = categoryData.images[selectedImage];
+    const full = typeof item === "string" ? item : item.full;
+
+    const img = new Image();
+    img.src = full;
+    img.onload = () => setFullLoaded(true);
+
+    // Preload neighbors
+    const preloadIndex = (i: number) => {
+      const it = categoryData.images[i];
+      const url = typeof it === "string" ? it : it.full;
+      const p = new Image();
+      p.src = url;
+    };
+
+    const prev = (selectedImage - 1 + categoryData.images.length) % categoryData.images.length;
+    const next = (selectedImage + 1) % categoryData.images.length;
+    preloadIndex(prev);
+    preloadIndex(next);
+
+    return () => {
+      // nothing to cleanup on Image preloads
+    };
+  }, [selectedImage, categoryData]);
+
   if (!categoryData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -133,7 +166,9 @@ export function GalleryPage() {
 
           {/* Masonry Gallery */}
           {categoryData.images.length > 0 && <Masonry columnsCount={3} gutter="1rem">
-            {categoryData.images.map((image, index) => (
+            {categoryData.images.map((image, index) => {
+              const thumb = typeof image === "string" ? image : image.thumbnail;
+              return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -142,14 +177,17 @@ export function GalleryPage() {
                 onClick={() => setSelectedImage(index)}
                 className="cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow group"
               >
-                <img
-                  src={image}
-                  alt={`${categoryData.name} ${index + 1}`}
-                  className="w-full h-auto transition-transform duration-500 group-hover:scale-110"
-                />
-              </motion.div>
-            ))}
-          </Masonry>}
+                  <img
+                    src={thumb}
+                    alt={`${categoryData.name} ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-auto transition-transform duration-500 group-hover:scale-110"
+                  />
+                </motion.div>
+              );
+            })}
+            </Masonry>}
         </div>
       </div>
 
@@ -192,15 +230,24 @@ export function GalleryPage() {
               <ChevronRight size={24} />
             </button>
 
-            <motion.img
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              src={categoryData.images[selectedImage]}
-              alt={`${categoryData.name} ${selectedImage + 1}`}
-              className="max-w-full max-h-full object-contain"
-              onClick={(e) => e.stopPropagation()}
-            />
+            {(() => {
+              const item = categoryData.images[selectedImage];
+              const thumb = typeof item === "string" ? item : item.thumbnail;
+              const full = typeof item === "string" ? item : item.full;
+              const displaySrc = fullLoaded ? full : thumb;
+              return (
+                <motion.img
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0.8 }}
+                  src={displaySrc}
+                  alt={`${categoryData.name} ${selectedImage + 1}`}
+                  className="max-w-full max-h-full object-contain"
+                  style={{ filter: fullLoaded ? "none" : "blur(8px)", transition: "filter .25s" }}
+                  onClick={(e) => e.stopPropagation()}
+                />
+              );
+            })()}
           </motion.div>
         )}
       </AnimatePresence>

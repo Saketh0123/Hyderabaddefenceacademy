@@ -1,4 +1,4 @@
-import { assetUrl } from "./assetUrl";
+import { imageEntry } from "./assetUrl";
 
 const republicDayImagePaths: string[] = [
   // Add Republic Day image paths from public/republic-day-images/.
@@ -57,4 +57,4 @@ const republicDayImagePaths: string[] = [
   "/republic-day-images/_DSC9367.JPG",
 ];
 
-export const republicDayImages: string[] = republicDayImagePaths.map(assetUrl);
+export const republicDayImages = republicDayImagePaths.map(imageEntry);

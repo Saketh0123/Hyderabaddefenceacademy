@@ -1,4 +1,4 @@
-import { assetUrl } from "./assetUrl";
+import { imageEntry } from "./assetUrl";
 
 const warriorMindsetImagePaths: string[] = [
   // Add Warrior Mindset Programme image paths from public/warrior-mindset-images/.
@@ -75,4 +75,4 @@ const warriorMindsetImagePaths: string[] = [
   "/warrior-mindset-images/0S2A3824.JPG",
 ];
 
-export const warriorMindsetImages: string[] = warriorMindsetImagePaths.map(assetUrl);
+export const warriorMindsetImages = warriorMindsetImagePaths.map(imageEntry);
