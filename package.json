@@ -10,7 +10,7 @@
     "dev:full": "concurrently -k \"npm run server\" \"npm run dev\"",
     "compress:hero-images": "node scripts/compress-hero-images.mjs",
     "gen:thumbs": "node scripts/generate-thumbs.mjs",
-    "prebuild": "npm run gen:thumbs && git lfs pull && git lfs checkout"
+    "prebuild": "node scripts/prebuild.mjs"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
