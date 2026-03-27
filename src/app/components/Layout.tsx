@@ -2,6 +2,7 @@ import { Outlet } from "react-router";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { WhatsAppButton } from "./WhatsAppButton";
+import PopupPromo from "./PopupPromo";
 
 export function Layout() {
   return (
@@ -12,6 +13,7 @@ export function Layout() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <PopupPromo />
     </div>
   );
 }

@@ -10,7 +10,7 @@ const staffImagePaths: StaffImage[] = [
   // Example:
   // { id: "staff-1", image: "/staff-images/staff-1.jpg" },
   // { id: "staff-2", image: "/staff-images/staff-2.jpg" },
-  { id: "1", image: "/staff-images/1.png" },
+  { id: "1", image: "/staff-images/1.jpg" },
   { id: "2", image: "/staff-images/2.png" },
   { id: "3", image: "/staff-images/3.png" },
   { id: "4", image: "/staff-images/4.png" },
