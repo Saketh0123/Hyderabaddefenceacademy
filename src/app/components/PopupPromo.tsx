@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { assetUrl } from "../data/assetUrl";
 
 export function PopupPromo() {
   const [open, setOpen] = useState(false);
   const [showClose, setShowClose] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [isMobile, setIsMobile] = useState(() => {
     if (typeof window === "undefined") return false;
     return window.matchMedia("(max-width: 767px)").matches;
@@ -24,22 +27,43 @@ export function PopupPromo() {
 
   useEffect(() => {
     let openTimer: ReturnType<typeof setTimeout> | undefined;
-    let closeTimer: ReturnType<typeof setTimeout> | undefined;
-
-    // Show popup after 1.5s
-    openTimer = setTimeout(() => {
-      setOpen(true);
-      // After popup appears, show close button after 5s
-      closeTimer = setTimeout(() => setShowClose(true), 5000);
-    }, 1500);
-
     return () => {
       if (openTimer) clearTimeout(openTimer);
-      if (closeTimer) clearTimeout(closeTimer);
+      if (timerRef.current) clearTimeout(timerRef.current);
     };
   }, []);
 
-  if (!open) return null;
+  // Wait for both 1.5s and image loaded
+  useEffect(() => {
+    let openTimer: ReturnType<typeof setTimeout>;
+    openTimer = setTimeout(() => {
+      if (imgLoaded) {
+        setOpen(true);
+        timerRef.current = setTimeout(() => setShowClose(true), 5000);
+      }
+    }, 1500);
+    return () => clearTimeout(openTimer);
+  }, [imgLoaded]);
+
+  const handleImgLoad = () => {
+    setImgLoaded(true);
+    // If 1.5s already passed, open immediately
+    setTimeout(() => {
+      if (!open) {
+        setOpen(true);
+        timerRef.current = setTimeout(() => setShowClose(true), 5000);
+      }
+    }, 1500);
+  };
+
+  if (!open || dismissed) {
+    // Preload image and trigger handleImgLoad
+    if (dismissed) return null;
+    const desktopPath = encodeURI("/hero-images/WED POSTER 1.jpg.jpg");
+    const mobilePath = encodeURI("/hero-images/WED POSTER MOBILE.jpg.jpg");
+    const src = assetUrl(isMobile ? mobilePath : desktopPath);
+    return <img src={src} alt="Promo preload" style={{ display: "none" }} onLoad={handleImgLoad} />;
+  }
 
   const desktopPath = encodeURI("/hero-images/WED POSTER 1.jpg.jpg");
   const mobilePath = encodeURI("/hero-images/WED POSTER MOBILE.jpg.jpg");
@@ -51,7 +75,10 @@ export function PopupPromo() {
         <img src={src} alt="Promo" className="w-full h-full object-contain block bg-white" />
         {showClose && (
           <button
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              setOpen(false);
+              setDismissed(true);
+            }}
             aria-label="Close popup"
             className="absolute top-3 right-3 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center rounded-full border border-red-600 shadow"
           >

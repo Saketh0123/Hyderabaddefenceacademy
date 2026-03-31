@@ -10,7 +10,7 @@ const getStaffImage = (id: string, fallback: string) => staffImageMap.get(id) ||
 const staffMembers = [
   {
     id: "1",
-    name: "DR. LN.K. RAJ KUMAR",
+    name: "Shri. DR. LN.K. RAJ KUMAR",
     role: "Chairman",
     image: getStaffImage(
       "1",
@@ -19,14 +19,16 @@ const staffMembers = [
     experience: "Experienced Educational Leader",
     qualification: "LLB, MBA",
   },
-  { id: "2", name: "Dr. R.K. Rao", role: "Chief Mentor", image: getStaffImage("2", ""), experience: "30+ Years (Indian Air Force + Academic Leadership)", qualification: "B.E., MBA" },
-  { id: "3", name: "MR Anjaiah.M", role: "Principal", image: getStaffImage("3", ""), experience: "Experienced Academic Leader", qualification: "MA, M.Ed, M.Phil" },
-  { id: "9", name: "Brigadier Prashant Halgeri", role: "Chief Advisor", image: getStaffImage("9", ""), experience: "36+ Years (Indian Army Leadership & Strategic Operations)", qualification: "M.Sc., M.Phil (Defence & Strategic Studies), MBA" },
-  { id: "10", name: "Col. Shashir Kumar Das", role: "Chief Advisor", image: getStaffImage("10", ""), experience: "Senior Leadership Experience", qualification: "NCC Group Commander" },
-  { id: "7", name: "Prof. D. Narayana Rao", role: "NDA Faculty", image: getStaffImage("7", ""), experience: "Experienced NDA Faculty", qualification: "Defence Exam Specialist" },
-  { id: "8", name: "Prof. Raghu Kumar", role: "NDA Faculty", image: getStaffImage("8", ""), experience: "Experienced NDA Faculty", qualification: "Defence Exam Specialist" },
-  { id: "6", name: "Prof. CSVS Murthy", role: "NDA Faculty", image: getStaffImage("6", ""), experience: "Experienced NDA Faculty", qualification: "Defence Exam Specialist" },
-  { id: "5", name: "Ramalingam.T", role: "Mathematics Faculty", image: getStaffImage("5", ""), experience: "25+ Years (Mathematics Teaching & Competitive Exam Training)", qualification: "M.Sc., M.Ed., M.Phil" },
+  { id: "2", name: "Shri. Dr. R.K. Rao", role: "Chief Mentor", image: getStaffImage("2", ""), experience: "30+ Years (Indian Air Force + Academic Leadership)", qualification: "B.E., MBA" },
+  { id: "3", name: "Shri. MR Anjaiah.M", role: "Principal", image: getStaffImage("3", ""), experience: "Experienced Academic Leader", qualification: "MA, M.Ed, M.Phil" },
+  { id: "9", name: "Shri. Brigadier Prashant Halgeri", role: "Chief Advisor", image: getStaffImage("9", ""), experience: "36+ Years (Indian Army Leadership & Strategic Operations)", qualification: "M.Sc., M.Phil (Defence & Strategic Studies), MBA" },
+  { id: "10", name: "Shri. Col. Shashir Kumar Das", role: "Chief Advisor", image: getStaffImage("10", ""), experience: "Senior Leadership Experience", qualification: "NCC Group Commander" },
+  { id: "7", name: "Shri. Prof. D. Narayana Rao", role: "NDA Faculty", image: getStaffImage("7", ""), experience: "Experienced NDA Faculty", qualification: "Defence Exam Specialist" },
+  { id: "8", name: "Shri. Prof. Raghu Kumar", role: "NDA Faculty", image: getStaffImage("8", ""), experience: "Experienced NDA Faculty", qualification: "Defence Exam Specialist" },
+  { id: "6", name: "Shri. Prof. CSVS Murthy", role: "NDA Faculty", image: getStaffImage("6", ""), experience: "Experienced NDA Faculty", qualification: "Defence Exam Specialist" },
+  { id: "5", name: "Shri. Ramalingam.T", role: "Mathematics Faculty", image: getStaffImage("5", ""), experience: "25+ Years (Mathematics Teaching & Competitive Exam Training)", qualification: "M.Sc., M.Ed., M.Phil" },
+
+  // New VIPs
 ];
 
 export function StaffSection() {

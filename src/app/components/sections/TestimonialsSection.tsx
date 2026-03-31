@@ -4,6 +4,24 @@ import { useEffect, useMemo, useState } from "react";
 
 const testimonials = [
   {
+    name: "Shri. Giridhar Ravula",
+    role: "IPS",
+    image: "https://assets.thehansindia.com/h-upload/2025/01/01/1511375-ravula.jpg",
+    quote: "It is a privilege to witness the discipline and dedication at Hyderabad Defence Academy. The academy is shaping the future of our nation with its values and commitment.",
+  },
+  {
+    name: "Shri. Vemula Srinivasulu",
+    role: "OSD to Chief Minister of Telangana",
+    image: "https://media.licdn.com/dms/image/v2/C4D03AQHLaZEMRjahKQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1652430471798?e=2147483647&v=beta&t=uf32-tvKqrMnWZrUsc7kKinjy5Q_zdCIjl4TSyxkacQ",
+    quote: "The academy's focus on holistic development and national pride is truly commendable. I wish all the students great success.",
+  },
+  {
+    name: "Shri. Dr. Pranay Sandeep",
+    role: "Secretary to Gurukul and Social Welfare, Govt of Telangana",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqq7c-EkHPH9GdNybhcYmZTJB4ytCwvcCwyw&s",
+    quote: "Hyderabad Defence Academy is a beacon of excellence in education and social responsibility. Proud to be associated with such an institution.",
+  },
+  {
     name: "Eatala Rajendar",
     role: "Member of the Lok Sabha",
     image: "https://www.thestatesman.com/wp-content/uploads/2025/06/Untitled-design-22-1-jpg.webp",

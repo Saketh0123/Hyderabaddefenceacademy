@@ -9,7 +9,7 @@ const stats = [
   },
   {
     icon: Users,
-    value: "5000+",
+    value: "11800+",
     label: "Trained Students",
   },
   {
