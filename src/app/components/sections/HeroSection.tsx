@@ -14,21 +14,28 @@ const fallbackSlides = [
   {
     image:
       "https://images.unsplash.com/photo-1767211808976-4317c37e77c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaWxpdGFyeSUyMHRyYWluaW5nJTIwb3V0ZG9vciUyMGV4ZXJjaXNlfGVufDF8fHx8MTc3MzkzMjgzNnww&ixlib=rb-4.1.0&q=80&w=1920",
-    alt: "Outdoor defence training session",
-    title: "Forging Tomorrow's\nDefenders",
-    subtitle: "Elite Training Programs for India's Future Defence Leaders",
+    alt: "State-of-the-art facilities",
+    title: "State-of-the-Art\nFacilities",
+    subtitle: "World-Class Infrastructure Designed for Excellence in Defence Training",
   },
   {
     image:
       "https://images.unsplash.com/photo-1623546835805-ba3d0f9fb7c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHVuaWZvcm0lMjBtYXJjaGluZ3xlbnwxfHx8fDE3NzM5MzI4NDF8MA&ixlib=rb-4.1.0&q=80&w=1920",
-    alt: "Students marching in uniform",
-    title: "March Towards\nExcellence",
-    subtitle: "Building Discipline, Leadership & National Pride Since Inception",
+    alt: "Modern infrastructure",
+    title: "Infrastructure\nBuilt for Success",
+    subtitle: "Cutting-Edge Training Facilities That Empower Future Leaders",
   },
   {
     image:
       "https://images.unsplash.com/photo-1660485345088-c398363c1f45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFkdWF0aW9uJTIwY2VyZW1vbnklMjBjZWxlYnJhdGlvbnxlbnwxfHx8fDE3NzM4OTcyNDd8MA&ixlib=rb-4.1.0&q=80&w=1920",
     alt: "Academy celebration ceremony",
+    title: "March Towards\nExcellence",
+    subtitle: "Building Discipline, Leadership & National Pride Since Inception",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1763890763377-abd05301034d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW1wdXMlMjBsaWZlJTIwc3R1ZGVudHMlMjBvdXRkb29yfGVufDF8fHx8MTc3MzkzMjgzNnww&ixlib=rb-4.1.0&q=80&w=1920",
+    alt: "Students enjoying campus life",
     title: "Celebrating\nEvery Victory",
     subtitle: "Our Students' Success Stories Inspire the Next Generation",
   },
@@ -155,7 +162,7 @@ export function HeroSection() {
               transition={{ duration: 0.6 }}
             >
               {currentSlide === 0 ? (
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-tight text-[#0a2342] [text-shadow:0_4px_24px_rgba(255,214,102,0.45),0_0_32px_rgba(10,35,66,0.7)]">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-tight text-[#FFD700] [text-shadow:0_4px_24px_rgba(255,214,102,0.45),0_0_32px_rgba(10,35,66,0.7)]">
                   <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black">WELCOME TO</span>
                   <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black">SOUTH INDIAS</span>
                   <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black">NO 1 DEFENCE ACADEMY</span>

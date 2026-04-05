@@ -11,7 +11,9 @@ const heroImagePaths: HeroImage[] = [
   // Example:
   // { src: "/hero-images/hero-1.jpg", alt: "Luxury interior with warm lighting" },
   // { src: "/hero-images/hero-2.jpg", alt: "Premium lounge space with modern decor" },
-  { src: "/hero-images/hero1.webp", alt: "Hyderabad Defence Academy hero image 1" },
+  { src: "/hero-images/hero1.jpeg", alt: "Hyderabad Defence Academy hero image 1" },
+  { src: "/hero-images/2hero.jpeg", alt: "Hyderabad Defence Academy building facilities" },
+  { src: "/hero-images/3hero.jpeg", alt: "Hyderabad Defence Academy infrastructure" },
   { src: "/hero-images/hero2.JPG", alt: "Hyderabad Defence Academy hero image 2" },
   { src: "/hero-images/hero3_11zon.jpg", alt: "Hyderabad Defence Academy hero image 3" },
   { src: "/hero-images/hero4_11zon.jpg", alt: "Hyderabad Defence Academy hero image 4" },
