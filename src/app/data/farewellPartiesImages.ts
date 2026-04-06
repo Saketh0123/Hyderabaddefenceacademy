@@ -1,6 +1,14 @@
 import { imageEntry } from "./assetUrl";
 
+export const farewellPartiesThumbnail = imageEntry("/farewell/09.jpg").thumbnail;
+
 const farewellPartiesImagePaths: string[] = [
+  "/farewell/09.jpg",
+  "/farewell/10.jpg",
+  "/farewell/23.jpg",
+  "/farewell/37.jpg",
+  "/farewell/36.jpg",
+  "/farewell/22.jpg",
   "/farewell/01.jpg",
   "/farewell/02.jpg",
   "/farewell/03.jpg",
@@ -9,8 +17,6 @@ const farewellPartiesImagePaths: string[] = [
   "/farewell/06.jpg",
   "/farewell/07.jpg",
   "/farewell/08.jpg",
-  "/farewell/09.jpg",
-  "/farewell/10.jpg",
   "/farewell/11.jpg",
   "/farewell/12.jpg",
   "/farewell/13.jpg",
@@ -22,8 +28,6 @@ const farewellPartiesImagePaths: string[] = [
   "/farewell/19.jpg",
   "/farewell/20.jpg",
   "/farewell/21.jpg",
-  "/farewell/22.jpg",
-  "/farewell/23.jpg",
   "/farewell/24.jpg",
   "/farewell/25.jpg",
   "/farewell/26.jpg",
@@ -36,8 +40,6 @@ const farewellPartiesImagePaths: string[] = [
   "/farewell/33.jpg",
   "/farewell/34.jpg",
   "/farewell/35.jpg",
-  "/farewell/36.jpg",
-  "/farewell/37.jpg",
   "/farewell/38.jpg",
   "/farewell/39.jpg",
   "/farewell/40.jpg",

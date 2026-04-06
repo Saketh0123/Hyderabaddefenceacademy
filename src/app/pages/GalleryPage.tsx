@@ -46,6 +46,7 @@ export function GalleryPage() {
   }, [category]);
 
   const categoryData = category ? galleryData[category] : null;
+  const masonryImages = categoryData?.images ?? [];
 
   const showPreviousImage = () => {
     if (!categoryData || selectedImage === null || categoryData.images.length === 0) {
@@ -149,8 +150,8 @@ export function GalleryPage() {
           )}
 
           {/* Masonry Gallery */}
-          {categoryData.images.length > 0 && <Masonry columnsCount={3} gutter="1rem">
-            {categoryData.images.map((image, index) => {
+          {masonryImages.length > 0 && <Masonry columnsCount={3} gutter="1rem">
+            {masonryImages.map((image, index) => {
               const thumb = typeof image === "string" ? image : image.thumbnail;
               return (
               <motion.div

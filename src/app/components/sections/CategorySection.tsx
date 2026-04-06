@@ -2,7 +2,7 @@ import { useNavigate } from "react-router";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { infrastructureImages } from "../../data/infrastructureImages";
-import { farewellPartiesImages } from "../../data/farewellPartiesImages";
+import { farewellPartiesThumbnail as farewellPartiesCategoryThumbnail } from "../../data/farewellPartiesImages";
 import { republicDayImages } from "../../data/republicDayImages";
 import { sportsImages } from "../../data/sportsImages";
 import { vipsImages } from "../../data/vipsImages";
@@ -18,7 +18,7 @@ const infrastructureThumbnail =
   "https://images.unsplash.com/photo-1759922378123-a1f4f1e39bae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbGFzc3Jvb20lMjBlZHVjYXRpb24lMjBzdHVkZW50cyUyMGxlYXJuaW5nfGVufDF8fHx8MTc3MzkzMjgzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 
 const farewellPartiesThumbnail =
-  firstThumb(farewellPartiesImages) ??
+  farewellPartiesCategoryThumbnail ??
   "https://images.unsplash.com/photo-1571071481471-a20b04ecd6ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXJld2VsbCUyMHN0dWRlbnRzJTIwZW1vdGlvbmFsfGVufDF8fHx8MTc3MzkzMjgzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 
 const republicDayThumbnail =
