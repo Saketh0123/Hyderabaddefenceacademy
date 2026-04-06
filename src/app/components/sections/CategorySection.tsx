@@ -113,6 +113,9 @@ export function CategorySection() {
                 <img
                   src={category.image}
                   alt={category.name}
+                  loading={index < 3 ? "eager" : "lazy"}
+                  fetchPriority={index < 3 ? "high" : "low"}
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -143,6 +146,9 @@ export function CategorySection() {
                     <img
                       src={category.image}
                       alt={category.name}
+                      loading={index < 2 ? "eager" : "lazy"}
+                      fetchPriority={index < 2 ? "high" : "low"}
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div>
