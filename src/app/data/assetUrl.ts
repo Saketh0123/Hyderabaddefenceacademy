@@ -23,7 +23,7 @@ export function thumbPath(path: string): string {
 
 export function imageEntry(path: string) {
   return {
-    thumbnail: assetUrl(thumbPath(path)),
+    thumbnail: assetUrl(path),
     full: assetUrl(path),
   };
 }

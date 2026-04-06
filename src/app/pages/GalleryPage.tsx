@@ -3,50 +3,34 @@ import { motion, AnimatePresence } from "motion/react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import Masonry from "react-responsive-masonry";
-import { freshersImages } from "../data/freshersImages";
+import { infrastructureImages } from "../data/infrastructureImages";
+import { farewellPartiesImages } from "../data/farewellPartiesImages";
 import { republicDayImages } from "../data/republicDayImages";
-import { farewellGirlsImages } from "../data/farewellGirlsImages";
-import { classroomImages } from "../data/classroomImages";
-import { trainingImages } from "../data/trainingImages";
-import { warriorMindsetImages } from "../data/warriorMindsetImages";
+import { sportsImages } from "../data/sportsImages";
+import { vipsImages } from "../data/vipsImages";
 
 type ImageItem = string | { thumbnail: string; full: string };
 
 const galleryData: Record<string, { name: string; images: ImageItem[] }> = {
-  classrooms: {
-    name: "Classrooms",
-    images: classroomImages,
+  infrastructure: {
+    name: "Infrastructure",
+    images: infrastructureImages,
   },
-  events: {
-    name: "Events",
-    images: [
-      "https://images.unsplash.com/photo-1771257808250-fa5fbffa8d54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjZWxlYnJhdGlvbiUyMGV2ZW50JTIwc3R1ZGVudHMlMjBoYXBweXxlbnwxfHx8fDE3NzM5MzI4Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "https://images.unsplash.com/photo-1623546835805-ba3d0f9fb7c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHVuaWZvcm0lMjBtYXJjaGluZ3xlbnwxfHx8fDE3NzM5MzI4NDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "https://images.unsplash.com/photo-1771257808250-fa5fbffa8d54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjZWxlYnJhdGlvbiUyMGV2ZW50JTIwc3R1ZGVudHMlMjBoYXBweXxlbnwxfHx8fDE3NzM5MzI4Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "https://images.unsplash.com/photo-1623546835805-ba3d0f9fb7c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHVuaWZvcm0lMjBtYXJjaGluZ3xlbnwxfHx8fDE3NzM5MzI4NDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "https://images.unsplash.com/photo-1771257808250-fa5fbffa8d54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjZWxlYnJhdGlvbiUyMGV2ZW50JTIwc3R1ZGVudHMlMjBoYXBweXxlbnwxfHx8fDE3NzM5MzI4Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "https://images.unsplash.com/photo-1623546835805-ba3d0f9fb7c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHVuaWZvcm0lMjBtYXJjaGluZ3xlbnwxfHx8fDE3NzM5MzI4NDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    ],
-  },
-  farewells: {
-    name: "Farewells",
-    images: freshersImages,
+  "farewell-parties": {
+    name: "Farewell Parties",
+    images: farewellPartiesImages,
   },
   "republic-day": {
     name: "Republic Day",
     images: republicDayImages,
   },
-  "farewell-girls": {
-    name: "Farewell Girls",
-    images: farewellGirlsImages,
+  sports: {
+    name: "Sports",
+    images: sportsImages,
   },
-  training: {
-    name: "Training",
-    images: trainingImages,
-  },
-  "warrior-mindset-program": {
-    name: "Warrior Mindset Program",
-    images: warriorMindsetImages,
+  vips: {
+    name: "VIPS",
+    images: vipsImages,
   },
 };
 
@@ -160,7 +144,7 @@ export function GalleryPage() {
 
           {categoryData.images.length === 0 && (
             <div className="rounded-xl border border-dashed border-gray-300 bg-gray-50 p-10 text-center text-gray-600">
-              No images added yet for this category. Add files in public/classroom-images, public/training-images, public/freshers-images, public/republic-day-images, public/farewell-girls-images, or public/warrior-mindset-images and update the corresponding data file in src/app/data.
+              No images added yet for this category. Add files in public/infrastructure, public/farewell, public/republic-day-images, public/training-images, or public/vips and update the corresponding data file in src/app/data.
             </div>
           )}
 

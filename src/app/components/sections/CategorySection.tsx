@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
-import { freshersImages } from "../../data/freshersImages";
+import { infrastructureImages } from "../../data/infrastructureImages";
+import { farewellPartiesImages } from "../../data/farewellPartiesImages";
 import { republicDayImages } from "../../data/republicDayImages";
-import { farewellGirlsImages } from "../../data/farewellGirlsImages";
-import { classroomImages } from "../../data/classroomImages";
-import { trainingImages } from "../../data/trainingImages";
-import { warriorMindsetImages } from "../../data/warriorMindsetImages";
+import { sportsImages } from "../../data/sportsImages";
+import { vipsImages } from "../../data/vipsImages";
 
 function firstThumb(images: Array<string | { thumbnail: string; full: string }>) {
   const first = images && images.length ? images[0] : null;
@@ -14,40 +13,36 @@ function firstThumb(images: Array<string | { thumbnail: string; full: string }>)
   return typeof first === "string" ? first : first.thumbnail;
 }
 
-const classroomThumbnail =
-  firstThumb(classroomImages) ??
+const infrastructureThumbnail =
+  firstThumb(infrastructureImages) ??
   "https://images.unsplash.com/photo-1759922378123-a1f4f1e39bae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbGFzc3Jvb20lMjBlZHVjYXRpb24lMjBzdHVkZW50cyUyMGxlYXJuaW5nfGVufDF8fHx8MTc3MzkzMjgzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 
-const farewellsThumbnail =
-  firstThumb(freshersImages) ??
+const farewellPartiesThumbnail =
+  firstThumb(farewellPartiesImages) ??
   "https://images.unsplash.com/photo-1571071481471-a20b04ecd6ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXJld2VsbCUyMHN0dWRlbnRzJTIwZW1vdGlvbmFsfGVufDF8fHx8MTc3MzkzMjgzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 
 const republicDayThumbnail =
   firstThumb(republicDayImages) ??
   "https://images.unsplash.com/photo-1526698542258-f7c17f192f7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
 
-const farewellGirlsThumbnail =
-  firstThumb(farewellGirlsImages) ??
-  "https://images.unsplash.com/photo-1571071481471-a20b04ecd6ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXJld2VsbCUyMHN0dWRlbnRzJTIwZW1vdGlvbmFsfGVufDF8fHx8MTc3MzkzMjgzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-
-const trainingThumbnail =
-  firstThumb(trainingImages) ??
+const sportsThumbnail =
+  firstThumb(sportsImages) ??
   "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
 
-const warriorMindsetThumbnail =
-  firstThumb(warriorMindsetImages) ??
+const vipsThumbnail =
+  firstThumb(vipsImages) ??
   "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
 
 const categories = [
   {
-    id: "classrooms",
-    name: "Classrooms",
-    image: classroomThumbnail,
+    id: "infrastructure",
+    name: "Infrastructure",
+    image: infrastructureThumbnail,
   },
   {
-    id: "farewells",
-    name: "Farewells",
-    image: farewellsThumbnail,
+    id: "farewell-parties",
+    name: "Farewell Parties",
+    image: farewellPartiesThumbnail,
   },
   {
     id: "republic-day",
@@ -55,19 +50,14 @@ const categories = [
     image: republicDayThumbnail,
   },
   {
-    id: "farewell-girls",
-    name: "Farewell Girls",
-    image: farewellGirlsThumbnail,
+    id: "sports",
+    name: "Sports",
+    image: sportsThumbnail,
   },
   {
-    id: "training",
-    name: "Training",
-    image: trainingThumbnail,
-  },
-  {
-    id: "warrior-mindset-program",
-    name: "Warrior Mindset Program",
-    image: warriorMindsetThumbnail,
+    id: "vips",
+    name: "VIPS",
+    image: vipsThumbnail,
   },
 ];
 
