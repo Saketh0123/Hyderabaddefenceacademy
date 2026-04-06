@@ -106,15 +106,14 @@ export function CategorySection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
                 onClick={() => handleCategoryClick(category.id)}
                 className="group relative h-80 rounded-2xl overflow-hidden cursor-pointer shadow-lg"
               >
                 <img
                   src={category.image}
                   alt={category.name}
-                  loading={index < 3 ? "eager" : "lazy"}
-                  fetchPriority={index < 3 ? "high" : "low"}
+                  loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -146,8 +145,7 @@ export function CategorySection() {
                     <img
                       src={category.image}
                       alt={category.name}
-                      loading={index < 2 ? "eager" : "lazy"}
-                      fetchPriority={index < 2 ? "high" : "low"}
+                      loading="lazy"
                       decoding="async"
                       className="w-full h-full object-cover"
                     />

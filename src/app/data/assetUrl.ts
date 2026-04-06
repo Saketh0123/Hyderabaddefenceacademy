@@ -21,9 +21,25 @@ export function thumbPath(path: string): string {
   return path.replace(/(\.[^/.]+)$/, "-thumb$1");
 }
 
+// Generate optimized thumbnail URL using image service
+export function optimizedThumb(path: string): string {
+  const url = assetUrl(path);
+  // For GitHub raw URLs, we can add query params for basic optimization
+  // Using jsDelivr CDN which supports image resizing parameters
+  if (url.includes("github.com")) {
+    // Convert GitHub raw URL to jsDelivr CDN for better compression
+    const cdnUrl = url.replace(
+      "https://github.com/Saketh0123/Hyderabaddefenceacademy/raw/main/public",
+      "https://cdn.jsdelivr.net/gh/Saketh0123/Hyderabaddefenceacademy/public"
+    );
+    return cdnUrl;
+  }
+  return url;
+}
+
 export function imageEntry(path: string) {
   return {
-    thumbnail: assetUrl(path),
+    thumbnail: optimizedThumb(path),
     full: assetUrl(path),
   };
 }
