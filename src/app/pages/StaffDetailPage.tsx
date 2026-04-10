@@ -13,50 +13,19 @@ const staffDetails: Record<
   }
 > = {
   "1": {
-    bio: "Sri. Lion K. Raj Kumar is an accomplished writer having authored several text books in his field of interest, Geography. He has earned his Masters degree in Management from Osmania University and an LLB from Kakatiya University.\n\nBeing an effective educational leader requires a complex set of knowledge, skills, and qualities; and Sri. Lion K. Raj Kumar is adept at all. He is a progressive leader who believes that inclusion, integrity and insight are the keys to good administration.\n\nHe is a firm believer in the infinite potential of young minds he mentors and adheres to the principle that education is incomplete without incorporating core values within the system.\n\nHe possesses a clear vision and a strong sense of purpose. He is a self driven leader with excellent communication and interpersonal skills.\n\nHe has established and partnered with a number of schools, junior colleges, and degree & P.G colleges.",
-    achievements: [
-      "Authored multiple academic textbooks in Geography",
-      "Holds MBA (Osmania University) and LLB (Kakatiya University)",
-      "Established and partnered with multiple educational institutions",
-      "Promotes value-based and inclusive education systems",
-    ],
-    specializations: [
-      "Educational Leadership & Administration",
-      "Student Development & Mentorship",
-      "Institutional Growth & Partnerships",
-      "Value-Based Education Systems",
-    ],
+    bio: "Chairman's Vision – Hyderabad Defence College\n\nDr. LN. K. Raj Kumar, the esteemed Chairman of Hyderabad Defence Academy and Junior College , is a visionary leader who has built the institution on the strong foundations of ethics, discipline, moral values, and national service. With an unwavering commitment to shaping the youth of the nation, he has dedicated his life to inspiring and preparing young aspirants to join the Indian Armed Forces and serve the country with pride, honour, and integrity.\n\nFrom an early age, Dr. Raj Kumar nurtured a deep aspiration to serve the nation in uniform. While circumstances did not allow him to fulfill that dream personally, he transformed his vision into a greater mission — establishing a premier defence institution that empowers students to achieve what he once envisioned. Today, under his dynamic leadership and guidance, numerous students have successfully secured positions in prestigious defence services, including the National Defence Academy (NDA).\n\nRecognized for its commitment to excellence, discipline, and result-oriented training, Hyderabad Defence Academy proudly stands as South India's No.1 Defence Academy  and most trusted defence training institutions, setting benchmarks in both academic and physical preparation for defence aspirants.\n\nUnder his stewardship, the institution has emerged as a centre of excellence where students are trained holistically — academically, physically, and mentally — to meet the rigorous standards of the armed forces and to develop into responsible, resilient, and nation-first individuals.\n\nDr. Raj Kumar firmly believes that being born in India is a privilege that comes with a duty to serve the nation. His guiding philosophy, inspired by the timeless spirit of \"Jai Jawan, Jai Kisan,\" reflects his deep respect for those who protect and sustain the nation.\n\nThrough his relentless dedication and visionary leadership, he continues to inspire generations of youth to uphold the honour, integrity, and pride of India by serving in the armed forces.\nJAI HIND.",
+    achievements: [],
+    specializations: [],
   },
   "2": {
-    bio: "A man with 30 years of distinguished service in the Indian Air Force, Dr. R.K. Rao has held many important appointments throughout his career. After retirement, he worked as Principal and Chief Administrator in multiple academies before joining Hyderabad Defence Academy as Chief Mentor.\n\nHe is a pioneer in creating awareness about national-level competitive exams and has produced outstanding results in IIT-JEE, NDA, and engineering entrance exams for Indian Navy, Army, and Air Force. His expertise also extends to training candidates for technical roles in the Armed Forces including Air Force, Navy, Army, and Coast Guard.\n\nHe holds an Engineering degree along with a Master's degree in Management, combining technical expertise with strong leadership and administrative skills.",
-    achievements: [
-      "30+ years of distinguished service in the Indian Air Force",
-      "Held multiple high-level leadership and administrative roles",
-      "Served as Principal and Chief Administrator in reputed academies",
-      "Mentored students achieving success in IIT-JEE, NDA, and defence exams",
-      "Specialized in training candidates for Armed Forces technical positions",
-    ],
-    specializations: [
-      "Defence Training & Competitive Exam Guidance",
-      "Academic Leadership & Institutional Administration",
-      "IIT-JEE, NDA & Engineering Entrance Coaching",
-      "Strategic Mentorship & Career Development",
-    ],
+    bio: "Dr. RK. Rao, Chief Mentor at Hyderabad Defence Academy, is a highly accomplished professional with over 30 years of service in the Indian Air Force and strong academic leadership experience. With qualifications in Engineering (B.E.) and Management (MBA), he has held key leadership and administrative roles and is a pioneer in defence training and competitive exam guidance. Known for his strategic, result-oriented mentorship, he has consistently guided students to success in IIT-JEE, NDA, and various defence entrance exams, while continuing to inspire aspirants with a focus on discipline, excellence, and service to the nation.",
+    achievements: [],
+    specializations: [],
   },
   "3": {
-    bio: "Macha Anjaiah is the Principal and an experienced academic leader with a strong foundation in teaching, mentoring, and institutional administration. He has played an important role in shaping student-focused academic environments and maintaining high educational standards.",
-    achievements: [
-      "Led student-centric academic initiatives",
-      "Contributed to institutional development and discipline",
-      "Guided students across multiple competitive streams",
-      "Known for structured and practical academic leadership",
-    ],
-    specializations: [
-      "Academic Leadership",
-      "Student Mentorship",
-      "Institutional Administration",
-      "Curriculum Guidance",
-    ],
+    bio: "Mr. Anjaiah M., Principal of Hyderabad Defence Academy & Junior College, is a distinguished academic leader with over 25 years of experience in the field of education. Holding advanced qualifications including M.A., M.Ed., and M.Phil., he has consistently demonstrated excellence in academic administration and student development. Under his leadership, the institution has achieved commendable results, including State Ranks in Intermediate Board Examinations and notable success in competitive examinations such as NDA, JEE Mains & Advanced, and EAPCET. His disciplined, student-centric approach and commitment to high academic standards have significantly contributed to nurturing competent, responsible, and future-ready individuals aligned with the institution's vision of national service.",
+    achievements: [],
+    specializations: [],
   },
   "4": {
     bio: "Srisailam is a dedicated Physics faculty member known for clear conceptual teaching and student-friendly instruction. He focuses on helping aspirants build strong fundamentals and confidence required for defence and competitive examinations.",
@@ -135,43 +104,21 @@ const staffDetails: Record<
     ],
   },
   "9": {
-    bio: "Brigadier Prashant Halgeri (Indian Army Veteran) brings over 36 years of distinguished service in the Indian Army. He has held key strategic and operational leadership roles across the country and abroad, with his last assignment as Director Education at HQ TASA.\n\nHis extensive experience spans multiple terrains and regions including Jammu & Kashmir, North East, and desert areas. He has also contributed significantly in instructional and teaching capacities, shaping military leaders at various levels.\n\nA subject matter expert in HR management, security, and operational readiness, he has been actively involved in training and capacity building programs for cadets to senior military leadership.\n\nHe is highly qualified in tactics, weapons, and military technology, with hands-on experience in their application, maintenance, and operational deployment across diverse environments.\n\nBrigadier Halgeri has also served in conflict zones including UN assignments in the Democratic Republic of Congo, where he led high-performance teams and managed complex operations involving government bodies, NGOs, and civil organizations.",
-    achievements: [
-      "36+ years of service in the Indian Army",
-      "Served as Director Education at HQ TASA",
-      "Extensive operational experience across J&K, North East, and desert regions",
-      "Led missions in international conflict zones including UN assignments",
-      "Expert in training military leaders from cadet to senior levels",
-      "Managed large-scale operations including planning, budgeting, and execution",
-    ],
-    specializations: [
-      "Strategic Military Leadership & Operations",
-      "Defence Training & Capacity Building",
-      "Security, HR & Operational Readiness",
-      "Tactics, Weapons & Military Technology",
-    ],
+    bio: "Chief Advisor – Hyderabad Defence Academy\n\nBrigadier Prashant Halgeri, Chief Advisor of Hyderabad Defence Academy, is a distinguished Indian Army veteran with over 36 years of exemplary service in leadership, strategy, and operational excellence. Holding advanced qualifications in Defence & Strategic Studies (M.Sc., M.Phil) and an MBA, he has served in key leadership roles across diverse and challenging terrains, including Jammu & Kashmir, the North East, and desert sectors. A seasoned expert in strategic operations, security, HR management, and operational readiness, he has extensively trained and mentored personnel from cadets to senior leaders, with notable international experience through United Nations assignments in the Democratic Republic of Congo, successfully leading complex missions. Renowned for his expertise in tactics, weapons, and military technology, Brigadier Halgeri continues to guide and inspire defence aspirants with a strong vision of excellence, discipline, and national service",
+    achievements: [],
+    specializations: [],
   },
   "10": {
-    bio: "Col. Shashir Kumar Das serves as Chief Advisor with distinguished leadership experience as an NCC Group Commander. He provides strategic guidance, discipline-oriented mentorship, and direction for developing future defence aspirants.",
-    achievements: [
-      "Served in senior leadership roles",
-      "NCC Group Commander with deep operational insight",
-      "Guides institutional strategy and student discipline",
-      "Supports defence-oriented career mentoring",
-    ],
-    specializations: [
-      "Strategic Defence Guidance",
-      "Leadership Development",
-      "NCC-Oriented Mentorship",
-      "Institutional Advisory",
-    ],
+    bio: "Colonel Shashir Kumar Das, Chief Advisor of Hyderabad Defence Academy, is a distinguished Indian Army officer and an eminent leader in youth development through the National Cadet Corps (NCC). Having served as Commander of the NCC Andhra Pradesh & Telangana Directorate, he is widely recognized for implementing transformative reforms that enhanced training standards, discipline, and overall organizational effectiveness. With a strong foundation in values, discipline, and leadership, he has consistently inspired and mentored young aspirants, instilling in them a spirit of service, responsibility, and patriotism. In his role as Chief Advisor, he provides strategic guidance and direction to the institution, ensuring the development of confident, disciplined, and nation-ready individuals aligned with the highest standards of the armed forces.",
+    achievements: [],
+    specializations: [],
   },
 };
 
 export function StaffDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const blankRightSideIds = new Set(["3", "4", "6", "7", "8", "10"]);
+  const blankRightSideIds = new Set(["4", "6", "7", "8"]);
 
   // Scroll to top when navigating to this page
   useEffect(() => {
@@ -272,48 +219,46 @@ export function StaffDetailPage() {
                 </div>
 
                 {/* Specializations */}
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">Areas of Expertise</h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {details.specializations.map((spec, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center gap-3 bg-blue-50 rounded-lg p-4"
-                      >
-                        <div className="w-2 h-2 bg-blue-900 rounded-full" />
-                        <span className="text-gray-900 font-medium">{spec}</span>
-                      </div>
-                    ))}
+                {details.specializations.length > 0 && (
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">Areas of Expertise</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {details.specializations.map((spec, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center gap-3 bg-blue-50 rounded-lg p-4"
+                        >
+                          <div className="w-2 h-2 bg-blue-900 rounded-full" />
+                          <span className="text-gray-900 font-medium">{spec}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Achievements */}
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">Key Achievements</h2>
-                  <div className="space-y-4">
-                    {details.achievements.map((achievement, index) => (
-                      <div key={index} className="flex gap-4">
-                        <div className="flex-shrink-0 w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mt-1">
-                          <Award className="text-white" size={20} />
+                {details.achievements.length > 0 && (
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">Key Achievements</h2>
+                    <div className="space-y-4">
+                      {details.achievements.map((achievement, index) => (
+                        <div key={index} className="flex gap-4">
+                          <div className="flex-shrink-0 w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mt-1">
+                            <Award className="text-white" size={20} />
+                          </div>
+                          <div className="flex-1">
+                            <p className="text-gray-700 leading-relaxed">{achievement}</p>
+                          </div>
                         </div>
-                        <div className="flex-1">
-                          <p className="text-gray-700 leading-relaxed">{achievement}</p>
-                        </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* CTA */}
                 <div className="bg-gradient-to-r from-blue-900 to-blue-700 rounded-2xl p-8 text-center">
                   <h3 className="text-2xl font-bold text-white mb-4">
-                    {staff.id === "1"
-                      ? "Want to learn from our leadership?"
-                      : staff.id === "2"
-                        ? "Want to learn from our mentors?"
-                        : staff.id === "5" || staff.id === "9"
-                          ? "Want to learn from our experts?"
-                          : `Want to learn from ${staff.name.split(" ")[0]}?`}
+                    {`Want to learn from ${staff.name}?`}
                   </h3>
                   <p className="text-white/90 mb-6">
                     {staff.id === "5" || staff.id === "9"
